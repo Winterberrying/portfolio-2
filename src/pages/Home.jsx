@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
+import React, { Suspense, useState, useEffect } from 'react'
 import Loader from '../components/Loader'
-import SplineViewer from '../components/SplineViewer'
-import { Link } from 'react-router-dom'
+import Spline from '@splinetool/react-spline';
+import Modal from '../components/Modal';
+import { About } from '.';
 
 {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
   POPUP
@@ -10,14 +10,42 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function onLoad(spline) {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      // Mobile devices
+      spline.setZoom(0.5);
+    } else {
+      // Desktop devices
+      spline.setZoom(1);
+    }
+  }
+
+  function onMouseDown(e) {
+    if (e.target.name === 'shelf_simple') {
+      console.log('Shelf has been clicked!');
+      setTimeout(() => {
+        setIsModalOpen(true);
+      }, 3000);
+    }
+  }
+
   return (
     <div>
       <section className='w-full h-screen relative'>
         <Suspense fallback={<Loader />}>
-          <SplineViewer />
+          <Spline 
+            scene="https://prod.spline.design/QQIbkWyjcZPVN9L4/scene.splinecode"
+            onMouseDown={onMouseDown}
+            onLoad={onLoad}
+          />
         </Suspense>
-        {/* <Link to="/about" className="absolute top-4 left-4 text-black text-xl z-10">About</Link> */}
       </section>
+      <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}>
+        <About />
+      </Modal>
     </div>
   )
 }
