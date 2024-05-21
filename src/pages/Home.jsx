@@ -16,9 +16,15 @@ const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const splineObject = useRef();
 
-  function returnHome() {
+  function closeContactModal() {
     setIsContactModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'Mobile');
+    console.log('Return Home');
+  }
+
+  function closeAboutModal() {
+    setIsAboutModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'shelf_simple');
     console.log('Return Home');
   }
 
@@ -60,13 +66,16 @@ const Home = () => {
           />
         </Suspense>
       </section>
-      {/* <Modal isOpen={isAboutModalOpen} onRequestClose={() => setIsAboutModalOpen(false)}>
+      <Modal isOpen={isAboutModalOpen} onRequestClose={() => setIsAboutModalOpen(false)}>
+        <button className='absolute top-0 right-0' onClick={closeAboutModal}>
+          <AiOutlineClose size={24}/>
+        </button>
         <About />
-      </Modal> */}
+      </Modal>
       <Modal 
         isOpen={isContactModalOpen} 
       >
-        <button className='absolute top-0 right-0' onClick={returnHome}>
+        <button className='absolute top-0 right-0' onClick={closeContactModal}>
           <AiOutlineClose size={24}/>
         </button>
         <Contact />
