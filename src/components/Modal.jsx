@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
       onRequestClose={onRequestClose}
       style={{
         overlay: {
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          backgroundColor: 'rgba(180, 180, 180, 0.75)',
         },
         content: {
           top: '50%',
@@ -20,6 +20,8 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
+          backgroundColor: 'transparent',
+          border: 'none',
         },
       }}
     >
