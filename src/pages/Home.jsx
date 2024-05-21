@@ -14,28 +14,16 @@ const Home = () => {
 
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const inputRef = useRef(null);
+  const splineObject = useRef();
 
   function returnHome() {
     setIsContactModalOpen(false);
-    simulateKeyPress();
+    splineObject.current.emitEvent('keyDown', 'Mobile');
     console.log('Return Home');
   }
 
-  const simulateKeyPress = () => {
-    const event = new KeyboardEvent('keydown', {
-      key: 'F10',
-      code: 'F10',
-      keyCode: 121, // Note: keyCode is deprecated
-      bubbles: true,
-      cancelable: true
-    });
-    inputRef.current.dispatchEvent(event);
-  };
-
-
   function onLoad(spline) {
-    spline.current = spline;
+    splineObject.current = spline;
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) {
       // Mobile devices
@@ -51,7 +39,7 @@ const Home = () => {
       console.log('Shelf has been clicked!');
       setTimeout(() => {
         setIsAboutModalOpen(true);
-      }, 3000);
+      }, 3100);
     }
     if (e.target.name === 'Mobile') {
       console.log('Mobile has been clicked!');
@@ -78,7 +66,7 @@ const Home = () => {
       <Modal 
         isOpen={isContactModalOpen} 
       >
-        <button ref={inputRef} className='absolute top-0 right-0' onClick={returnHome}>
+        <button className='absolute top-0 right-0' onClick={returnHome}>
           <AiOutlineClose size={24}/>
         </button>
         <Contact />
