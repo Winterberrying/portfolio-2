@@ -5,10 +5,11 @@ import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root'); // Ensure accessibility
 
 const Modal = ({ isOpen, onRequestClose, children }) => {
+
   return (
     <ReactModal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
+      // onRequestClose={onRequestClose}
       style={{
         overlay: {
           backgroundColor: 'rgba(180, 180, 180, 0.75)',
