@@ -12,7 +12,7 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
       // onRequestClose={onRequestClose}
       style={{
         overlay: {
-          backgroundColor: 'rgba(180, 180, 180, 0.75)',
+          backgroundColor: 'rgba(203, 213, 225, 0.90)',
         },
         content: {
           top: '50%',
@@ -26,7 +26,9 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
         },
       }}
     >
-      {children}
+      <div className="max-h-[calc(100vh-210px)] overflow-y-auto" style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none' }}>
+        {children}
+      </div>
     </ReactModal>
   );
 };

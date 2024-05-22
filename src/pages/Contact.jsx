@@ -4,8 +4,8 @@ import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 const Contact = () => {
   return (
     <div className="flex flex-col items-center">
-      <h1 className="m-8 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl dark:text-black">Let's get in touch.</h1>
-      <div className="flex flex-col items-center space-y-4">
+      <h1 className="m-8 text-4xl font-extrabold tracking-tight text-center md:text-5xl lg:text-6xl dark:text-black">Let's get in touch.</h1>
+      <div className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4">
           <AiFillGithub size={30}/>
           <p className="text-2xl font-normal lg:text-xl dark:text-black underline">

@@ -3,6 +3,7 @@ import Modal from '../components/Modal';
 import { About, Contact } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from "react-icons/ai";
+import Navbar from '../components/Navbar';
 
 {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
   POPUP
@@ -57,6 +58,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
       <section className='w-full h-screen relative'>
         <Suspense fallback={<Loader />}>
           <Spline 
@@ -67,17 +69,25 @@ const Home = () => {
         </Suspense>
       </section>
       <Modal isOpen={isAboutModalOpen} onRequestClose={() => setIsAboutModalOpen(false)}>
-        <button className='absolute top-0 right-0' onClick={closeAboutModal}>
-          <AiOutlineClose size={24}/>
-        </button>
-        <About />
+        <div className='flex flex-col h-full m-4 md:m-16 lg:m-56'>
+          <div className="flex justify-end">
+            <button className='' onClick={closeAboutModal}>
+              <AiOutlineClose size={24}/>
+            </button>
+          </div>
+          <About />
+        </div>
       </Modal>
       <Modal 
         isOpen={isContactModalOpen} 
       >
-        <button className='absolute top-0 right-0' onClick={closeContactModal}>
-          <AiOutlineClose size={24}/>
-        </button>
+        <div className='flex flex-col h-full'>
+          <div className="flex justify-end">
+            <button className='' onClick={closeContactModal}>
+              <AiOutlineClose size={24}/>
+            </button>
+          </div>
+        </div>
         <Contact />
       </Modal>
     </div>
