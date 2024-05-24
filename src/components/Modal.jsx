@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 
 ReactModal.setAppElement('#root'); // Ensure accessibility
 
-const Modal = ({ isOpen, onRequestClose, children }) => {
+const Modal = ({ isOpen, children }) => {
 
   return (
     <ReactModal

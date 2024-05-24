@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
-const Navbar = ({ openAboutModal, openContactModal }) => {
+const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleModal }) => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
 
@@ -19,9 +19,9 @@ const Navbar = ({ openAboutModal, openContactModal }) => {
   const navItems = [
     { id: 1, text: 'Home', href: '/' },
     { id: 2, text: 'About', action: openAboutModal },
-    { id: 3, text: 'Projects', href: '/' },
+    { id: 3, text: 'People', action: openPeopleModal },
     { id: 4, text: 'Contact', action: openContactModal },
-    { id: 5, text: 'Hobbies', href: '/' },
+    { id: 5, text: 'Hobbies', action: openHobbyModal },
   ];
 
   return (
@@ -43,7 +43,10 @@ const Navbar = ({ openAboutModal, openContactModal }) => {
               className='p-4 hover:bg-[#aabfb8] rounded-xl m-2 cursor-pointer duration-300 hover:text-white'
               onClick={() => item.action && handleNavItemClick(item.action)}
             >
-              <a>{item.text}</a>
+              {item.href ? (
+                <a href={item.href}>{item.text}</a>) : (
+                <a>{item.text}</a>)
+              }
             </li>
           ))}
         </ul>
@@ -69,7 +72,10 @@ const Navbar = ({ openAboutModal, openContactModal }) => {
             className='p-4 ml-2 rounded-xl hover:bg-[#aabfb8] duration-300 hover:text-white cursor-pointer'
             onClick={() => item.action ? handleNavItemClick(item.action) : handleNav()}
           >
-            <a>{item.text}</a>
+            {item.href ? (
+              <a href={item.href}>{item.text}</a>) : (
+              <a>{item.text}</a>)
+            }
           </li>
         ))}
       </ul>

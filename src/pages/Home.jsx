@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useEffect, lazy, useRef } from 'react'
 import Modal from '../components/Modal';
-import { About, Contact } from '.';
+import { About, Contact, Hobbies, People } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from "react-icons/ai";
 import Navbar from '../components/Navbar';
@@ -15,11 +15,15 @@ const Home = () => {
 
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isHobbyModalOpen, setIsHobbyModalOpen] = useState(false);
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const splineObject = useRef();
 
   function closeModals() {
     setIsAboutModalOpen(false);
     setIsContactModalOpen(false);
+    setIsHobbyModalOpen(false);
+    setIsPhotoModalOpen(false);
   }
 
   function closeContactModal() {
@@ -34,6 +38,18 @@ const Home = () => {
     console.log('Return Home');
   }
 
+  function closeHobbyModal() {
+    setIsHobbyModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'Guitar');
+    console.log('Return Home');
+  }
+
+  function closePhotoModal() {
+    setIsPhotoModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'photo-2');
+    console.log('Return Home');
+  }
+
   function openAboutModal() {
     closeModals();
     setIsAboutModalOpen(true);
@@ -42,6 +58,16 @@ const Home = () => {
   function openContactModal() {
     closeModals();
     setIsContactModalOpen(true);
+  }
+
+  function openHobbyModal() {
+    closeModals();
+    setIsHobbyModalOpen(true);
+  }
+
+  function openPhotoModal() {
+    closeModals();
+    setIsPhotoModalOpen(true);
   }
 
   function onLoad(spline) {
@@ -69,11 +95,23 @@ const Home = () => {
         setIsContactModalOpen(true);
       }, 3000);
     }
+    if (e.target.name === 'Guitar') {
+      console.log('Guitar has been clicked!');
+      setTimeout(() => {
+        setIsHobbyModalOpen(true);
+      }, 3000);
+    }
+    if (e.target.name === 'photo-2') {
+      console.log('Photo has been clicked!');
+      setTimeout(() => {
+        setIsPhotoModalOpen(true);
+      }, 3000);
+    }
   }
 
   return (
     <div>
-      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} />
+      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPhotoModal={openPhotoModal} />
       <section className='w-full h-screen relative'>
         <Suspense fallback={<Loader />}>
           <Spline 
@@ -83,7 +121,7 @@ const Home = () => {
           />
         </Suspense>
       </section>
-      <Modal isOpen={isAboutModalOpen} onRequestClose={() => setIsAboutModalOpen(false)}>
+      <Modal isOpen={isAboutModalOpen}>
         <div className='flex flex-col h-full m-4 md:m-16 lg:m-56'>
           <div className="flex justify-end">
             <button className='' onClick={closeAboutModal}>
@@ -93,9 +131,7 @@ const Home = () => {
           <About />
         </div>
       </Modal>
-      <Modal 
-        isOpen={isContactModalOpen} 
-      >
+      <Modal isOpen={isContactModalOpen}>
         <div className='flex flex-col h-full'>
           <div className="flex justify-end">
             <button className='' onClick={closeContactModal}>
@@ -104,6 +140,26 @@ const Home = () => {
           </div>
         </div>
         <Contact />
+      </Modal>
+      <Modal isOpen={isHobbyModalOpen}>
+        <div className='flex flex-col h-full'>
+          <div className="flex justify-end">
+            <button className='' onClick={closeHobbyModal}>
+              <AiOutlineClose size={24}/>
+            </button>
+          </div>
+        </div>
+        <Hobbies />
+      </Modal>
+      <Modal isOpen={isPhotoModalOpen}>
+        <div className='flex flex-col h-full'>
+          <div className="flex justify-end">
+            <button className='' onClick={closePhotoModal}>
+              <AiOutlineClose size={24}/>
+            </button>
+          </div>
+        </div>
+        <People />
       </Modal>
     </div>
   )
