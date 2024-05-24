@@ -17,6 +17,11 @@ const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const splineObject = useRef();
 
+  function closeModals() {
+    setIsAboutModalOpen(false);
+    setIsContactModalOpen(false);
+  }
+
   function closeContactModal() {
     setIsContactModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'Mobile');
@@ -27,6 +32,16 @@ const Home = () => {
     setIsAboutModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'shelf_simple');
     console.log('Return Home');
+  }
+
+  function openAboutModal() {
+    closeModals();
+    setIsAboutModalOpen(true);
+  }
+
+  function openContactModal() {
+    closeModals();
+    setIsContactModalOpen(true);
   }
 
   function onLoad(spline) {
@@ -58,7 +73,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} />
       <section className='w-full h-screen relative'>
         <Suspense fallback={<Loader />}>
           <Spline 

@@ -28,7 +28,16 @@ export default {
       },
       boxShadow: {
         card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'
-      }
+      },
+      keyframes: {
+        'float-in': {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        'float-in': 'float-in 1s forwards',
+      },
     },
   },
   plugins: [],

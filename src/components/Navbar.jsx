@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
-const Navbar = () => {
+const Navbar = ({ openAboutModal, openContactModal }) => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
 
@@ -10,14 +10,18 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+  const handleNavItemClick = (action) => {
+    action();
+    setNav(false); // Close the mobile menu after clicking a link
+  };
+
   // Array containing navigation items
   const navItems = [
     { id: 1, text: 'Home', href: '/' },
-    { id: 2, text: 'About', href: '/' },
+    { id: 2, text: 'About', action: openAboutModal },
     { id: 3, text: 'Projects', href: '/' },
-    { id: 4, text: 'Contact', href: '/' },
+    { id: 4, text: 'Contact', action: openContactModal },
     { id: 5, text: 'Hobbies', href: '/' },
-    // { id: 6, text: 'People', href: 'people' },
   ];
 
   return (
@@ -37,8 +41,9 @@ const Navbar = () => {
             <li
               key={item.id}
               className='p-4 hover:bg-[#aabfb8] rounded-xl m-2 cursor-pointer duration-300 hover:text-white'
+              onClick={() => item.action && handleNavItemClick(item.action)}
             >
-              <a href={item.href}>{item.text}</a>
+              <a>{item.text}</a>
             </li>
           ))}
         </ul>
@@ -62,8 +67,9 @@ const Navbar = () => {
           <li
             key={item.id}
             className='p-4 ml-2 rounded-xl hover:bg-[#aabfb8] duration-300 hover:text-white cursor-pointer'
+            onClick={() => item.action ? handleNavItemClick(item.action) : handleNav()}
           >
-            <a href={item.href}>{item.text}</a>
+            <a>{item.text}</a>
           </li>
         ))}
       </ul>
