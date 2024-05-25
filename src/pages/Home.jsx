@@ -111,7 +111,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPhotoModal={openPhotoModal} />
+      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} />
       <section className='w-full h-screen relative'>
         <Suspense fallback={<Loader />}>
           <Spline 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import * as Avatar from '@radix-ui/react-avatar';
 
 const About = () => {
   useEffect(() => {
@@ -16,7 +17,21 @@ const About = () => {
 
   return (
     <div className="flex flex-col items-center p-6 xl:ml-40 xl:mr-40">
-      <h1 className="m-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">Chien Hui</h1>
+      <Avatar.Root className="inline-flex items-center justify-center overflow-hidden rounded-full w-56 h-56 mt-4">
+        <Avatar.Image
+          className="w-full h-full object-cover"
+          src="/photos/avatar/ch.png"
+          size="8"
+          alt="Avatar"
+        />
+        <Avatar.Fallback
+          className="w-full h-full flex items-center justify-center bg-gray-300 text-gray-700"
+          delayMs={600}
+        >
+          CH
+        </Avatar.Fallback>
+      </Avatar.Root>
+      <h1 className="mb-4 ml-4 mr-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">Chien Hui</h1>
       <div className='flex flex-col items-center space-y-4 text-center'>
         <p className="text-lg leading-normal font-normal xl:text-xl text-gray-800">
           As a final year Computer Science student, I'm deeply passionate about algorithms and their uses in problem solving. 

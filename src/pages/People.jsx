@@ -1,95 +1,40 @@
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React from "react";
+import Slider from "react-slick";
 
-const People = () => {
-  const items = [
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle: "Men of the British Expeditionary Force (BEF) wade out to destroyers at Dunkirk.",
-      cardDetailedText: "The evacuation, known as the Miracle of Dunkirk, saw 338,226 soldiers rescued by a hastily assembled fleet of over 800 boats.",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "https://linktoyourimage.com/dunkirk.jpg"
-        }
-      }
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle: "Men of the British Expeditionary Force (BEF) wade out to destroyers at Dunkirk.",
-      cardDetailedText: "The evacuation, known as the Miracle of Dunkirk, saw 338,226 soldiers rescued by a hastily assembled fleet of over 800 boats.",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "https://linktoyourimage.com/dunkirk.jpg"
-        }
-      }
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle: "Men of the British Expeditionary Force (BEF) wade out to destroyers at Dunkirk.",
-      cardDetailedText: "The evacuation, known as the Miracle of Dunkirk, saw 338,226 soldiers rescued by a hastily assembled fleet of over 800 boats.",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "https://linktoyourimage.com/dunkirk.jpg"
-        }
-      }
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle: "Men of the British Expeditionary Force (BEF) wade out to destroyers at Dunkirk.",
-      cardDetailedText: "The evacuation, known as the Miracle of Dunkirk, saw 338,226 soldiers rescued by a hastily assembled fleet of over 800 boats.",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "https://linktoyourimage.com/dunkirk.jpg"
-        }
-      }
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle: "Men of the British Expeditionary Force (BEF) wade out to destroyers at Dunkirk.",
-      cardDetailedText: "The evacuation, known as the Miracle of Dunkirk, saw 338,226 soldiers rescued by a hastily assembled fleet of over 800 boats.",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "https://linktoyourimage.com/dunkirk.jpg"
-        }
-      }
-    },
-    // Add other events similarly...
-  ];
-
+function AutoPlay() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay:false,
+    autoplaySpeed: 2000,
+    cssEase: "linear"
+  };
   return (
-    <div style={{ width: '100%', height: '100%' }}>  {/* Adjust size as needed */}
-      <Chrono 
-        items={items} 
-        mode="HORIZONTAL" 
-        // disableToolbar
-        useReadMore={true}
-        slideShow 
-        slideItemDuration={4500}
-        theme={{
-          primary: "deepskyblue",
-          secondary: "lavender",
-          cardBgColor: "white",
-          cardForeColor: "rgba(0,0,0,0.87)"
-        }}
-        cardHeight={250}
-      />
+    <div className="slider-container">
+      <Slider {...settings}>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </Slider>
     </div>
   );
-};
+}
 
-export default People;
+export default AutoPlay;
