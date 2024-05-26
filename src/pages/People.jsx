@@ -45,7 +45,7 @@ const People = () => {
     {
       year: "2022",
       name: "R 💕",
-      description: "My boyfriend, the person who was there during my lowest point, who helped me pick myself up and find my way back to the light.",
+      description: "My boyfriend, the person who was there during my lowest point, who helped me pick myself up and find my way back to the light. He is a smart and calm individual who always does his best at everything.",
       image: "/photos/avatar/r.png"
     },
     {
