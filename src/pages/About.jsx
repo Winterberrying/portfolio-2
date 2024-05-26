@@ -58,14 +58,14 @@ const About = () => {
           date="Dec 2022 — May 2023" 
           title="AI & Cyber Intern" 
           company="Home Team Science and Technology (HTX), Singapore" 
-          description="Contributed to AI projects aimed at enhancing cybersecurity measures. Developed machine learning models to detect and prevent cyber threats."
+          description="Acquired expertise in web scraping, employing Python libraries, Scrapy and Selenium to develop a video downloader."
           skills={['Python', 'Web Scraping', 'Selenium', 'BeautifulSoup4']}
         />
         <ExperienceCard 
           date="May 2021 — Aug 2021" 
           title="Project Intern" 
           company="Quality Zone Technologies (QZT), Singapore" 
-          description="Assisted in various software development projects, focusing on quality assurance and testing. Implemented automated test scripts and performed manual testing."
+          description="Assisted in various software development projects, focusing on good documentation and quality assurance."
           skills={['Documentation', 'Technical Specifications Writing', "User Acceptance Testing"]}
         />
       </div>
@@ -74,7 +74,7 @@ const About = () => {
 };
 
 const ExperienceCard = ({ date, title, company, description, skills }) => (
-  <div className="experience-card flex flex-col xl:flex-row p-4 rounded-lg shadow-lg border border-gray-300 bg-gray-100 hover:bg-gray-200 transition duration-300 transform">
+  <div className="experience-card flex flex-col xl:flex-row p-4 rounded-lg shadow-lg border border-gray-300 bg-white scale-105 transition duration-300 transform">
     <div className="xl:w-1/4 xl:text-right sm:text-left md:text-left pr-4 xl:pr-8">
       <p className="leading-7 text-sm font-semibold text-gray-600">{date}</p>
     </div>

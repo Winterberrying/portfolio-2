@@ -12,7 +12,7 @@ const Modal = ({ isOpen, children }) => {
       // onRequestClose={onRequestClose}
       style={{
         overlay: {
-          backgroundColor: 'rgba(203, 213, 225, 0.90)',
+          backgroundColor: 'rgba(225, 225, 225, 0.95)',
         },
         content: {
           top: '50%',
