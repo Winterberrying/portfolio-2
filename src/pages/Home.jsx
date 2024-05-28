@@ -113,7 +113,7 @@ const Home = () => {
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40 p-2" onClick={closeAboutModal}>
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeAboutModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -123,7 +123,7 @@ const Home = () => {
       <Modal isOpen={isContactModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40 p-2" onClick={closeContactModal}>
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeContactModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -133,7 +133,7 @@ const Home = () => {
       <Modal isOpen={isHobbyModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40 p-2" onClick={closeHobbyModal}>
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeHobbyModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -143,7 +143,7 @@ const Home = () => {
       <Modal isOpen={isPhotoModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40 p-2" onClick={closePhotoModal}>
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closePhotoModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
