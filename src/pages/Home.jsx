@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsReady(true);
-    }, 1000); // Adjust the delay as needed
+    }, 3000); // Adjust the delay as needed
     return () => clearTimeout(timer);
   }, []);
 
@@ -115,7 +115,7 @@ const Home = () => {
       <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} />
       <section className="w-full h-screen relative">
       {isReady ? (
-        <Suspense fallback={<div>Loading Spline...</div>}>
+        <Suspense fallback={<Loader />}>
           <Spline scene="https://prod.spline.design/QQIbkWyjcZPVN9L4/scene.splinecode" onMouseDown={onMouseDown} onLoad={onLoad} />
         </Suspense>
       ) : (
