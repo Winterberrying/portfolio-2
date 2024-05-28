@@ -26,7 +26,7 @@ const Modal = ({ isOpen, children }) => {
         },
       }}
     >
-      <div className="max-h-[calc(100vh-210px)] overflow-y-auto z-0" style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none' }}>
+      <div className="max-h-[calc(100vh-210px)] z-0" style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none' }}>
         {children}
       </div>
     </ReactModal>
