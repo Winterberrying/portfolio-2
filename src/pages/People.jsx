@@ -71,9 +71,14 @@ const People = () => {
   };
 
   const getDisplayedPeople = () => {
-    const prevIndex = (currentCard - 1 + people.length) % people.length;
-    const nextIndex = (currentCard + 1) % people.length;
-    return [people[prevIndex], people[currentCard], people[nextIndex]];
+    const isSmallScreen = window.innerWidth < 1024;
+    if (isSmallScreen) {
+      return [people[currentCard]];
+    } else {
+      const prevIndex = (currentCard - 1 + people.length) % people.length;
+      const nextIndex = (currentCard + 1) % people.length;
+      return [people[prevIndex], people[currentCard], people[nextIndex]];
+    }
   };
 
   return (
@@ -82,7 +87,7 @@ const People = () => {
       <h2 className="mb-8 text-lg leading-normal font-normal xl:text-xl text-gray-800 text-center">
         Here are some of the people who have come into my life, and for whom I am extremely grateful.
       </h2>
-      <div className="flex flex-col lg:flex-row justify-center items-center w-full mb-4 space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+      <div className='flex flex-row w-full justify-between space-x-4 lg:mb-8 md:mb-8 sm:mb-2'>
         <button
           onClick={handlePrev}
           className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-300"
@@ -90,7 +95,16 @@ const People = () => {
           <FaArrowLeft className="mr-2" />
           Previous
         </button>
-        <div className="flex justify-center space-x-0 lg:space-x-4 w-full max-w-4xl">
+        <button
+          onClick={handleNext}
+          className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-300"
+        >
+          Next
+          <FaArrowRight className="ml-2" />
+        </button>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-center items-center w-full mb-4 space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+        <div className="flex justify-center space-x-0 lg:space-x-4 w-full max-w-5xl">
           {getDisplayedPeople().map((person, index) => (
             <PeopleCard
               key={person.name}
@@ -102,20 +116,13 @@ const People = () => {
             />
           ))}
         </div>
-        <button
-          onClick={handleNext}
-          className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-300"
-        >
-          Next
-          <FaArrowRight className="ml-2" />
-        </button>
       </div>
     </div>
   );
 };
 
 const PeopleCard = ({ year, name, description, image, isHighlighted }) => (
-  <div className={`flex flex-col items-center p-4 rounded-lg shadow-lg border ${isHighlighted ? 'border-black bg-white scale-105' : 'border-gray-300 bg-gray-100'} transition duration-300 transform w-full lg:w-1/3`}>
+  <div className={`flex flex-col items-center p-4 rounded-lg shadow-lg border ${isHighlighted ? 'border-black bg-white scale-105' : 'border-gray-300 bg-gray-100'} transition duration-300 transform w-full`}>
     <small className="mb-2 text-gray-600">{year}</small>
     <Avatar.Root className="inline-flex items-center justify-center overflow-hidden rounded-full w-24 h-24 lg:w-48 lg:h-48 mb-4">
       <Avatar.Image
@@ -133,3 +140,4 @@ const PeopleCard = ({ year, name, description, image, isHighlighted }) => (
 );
 
 export default People;
+``
