@@ -21,25 +21,29 @@ const Home = () => {
     setIsPhotoModalOpen(false);
   };
 
-  const closeContactModal = () => {
+  const closeContactModal = (event) => {
+    event.stopPropagation();
     setIsContactModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'Mobile');
     console.log('Return Home');
   };
 
-  const closeAboutModal = () => {
+  const closeAboutModal = (event) => {
+    event.stopPropagation();
     setIsAboutModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'shelf_simple');
     console.log('Return Home');
   };
 
-  const closeHobbyModal = () => {
+  const closeHobbyModal = (event) => {
+    event.stopPropagation();
     setIsHobbyModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'Guitar');
     console.log('Return Home');
   };
 
-  const closePhotoModal = () => {
+  const closePhotoModal = (event) => {
+    event.stopPropagation();
     setIsPhotoModalOpen(false);
     splineObject.current.emitEvent('keyDown', 'photo-2');
     console.log('Return Home');
@@ -113,7 +117,7 @@ const Home = () => {
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40" onClick={closeAboutModal}>
+            <button className="close-button text-gray-800 hover:text-gray-600 cursor-pointer z-50" onClick={closeAboutModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -123,7 +127,7 @@ const Home = () => {
       <Modal isOpen={isContactModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40" onClick={closeContactModal}>
+            <button className="close-button text-gray-800 hover:text-gray-600 cursor-pointer z-50" onClick={closeContactModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -133,7 +137,7 @@ const Home = () => {
       <Modal isOpen={isHobbyModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40" onClick={closeHobbyModal}>
+            <button className="close-button text-gray-800 hover:text-gray-600 cursor-pointer z-50" onClick={closeHobbyModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -143,7 +147,7 @@ const Home = () => {
       <Modal isOpen={isPhotoModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="z-40" onClick={closePhotoModal}>
+            <button className="close-button text-gray-800 hover:text-gray-600 cursor-pointer z-50" onClick={closePhotoModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
