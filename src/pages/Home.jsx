@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useRef } from 'react';
+import React, { Suspense, useState, useRef, useEffect } from 'react';
 import Modal from '../components/Modal';
 import { About, Contact, Hobbies, People } from '.';
 import Loader from '../components/Loader';
@@ -13,6 +13,14 @@ const Home = () => {
   const [isHobbyModalOpen, setIsHobbyModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const splineObject = useRef();
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 1000); // Adjust the delay as needed
+    return () => clearTimeout(timer);
+  }, []);
 
   const closeModals = () => {
     setIsAboutModalOpen(false);
@@ -106,9 +114,13 @@ const Home = () => {
     <div>
       <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} />
       <section className="w-full h-screen relative">
-        <Suspense fallback={<Loader />}>
+      {isReady ? (
+        <Suspense fallback={<div>Loading Spline...</div>}>
           <Spline scene="https://prod.spline.design/QQIbkWyjcZPVN9L4/scene.splinecode" onMouseDown={onMouseDown} onLoad={onLoad} />
         </Suspense>
+      ) : (
+        <Loader />
+      )}
       </section>
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
