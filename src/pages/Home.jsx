@@ -13,14 +13,7 @@ const Home = () => {
   const [isHobbyModalOpen, setIsHobbyModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const splineObject = useRef();
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 3000); // Adjust the delay as needed
-    return () => clearTimeout(timer);
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
 
   const closeModals = () => {
     setIsAboutModalOpen(false);
@@ -74,6 +67,7 @@ const Home = () => {
   };
 
   const onLoad = (spline) => {
+    setIsLoading(false);
     splineObject.current = spline;
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) {
@@ -114,13 +108,12 @@ const Home = () => {
     <div>
       <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} />
       <section className="w-full h-screen relative">
-      {isReady ? (
-        <Suspense fallback={<Loader />}>
-          <Spline scene="https://prod.spline.design/QQIbkWyjcZPVN9L4/scene.splinecode" onMouseDown={onMouseDown} onLoad={onLoad} />
-        </Suspense>
-      ) : (
-        <Loader />
-      )}
+        {isLoading && <Loader />}
+        <Spline 
+          scene="https://prod.spline.design/QQIbkWyjcZPVN9L4/scene.splinecode" 
+          onMouseDown={onMouseDown} 
+          onLoad={onLoad} 
+        />
       </section>
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
