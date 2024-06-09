@@ -16,6 +16,7 @@ CH's Space is a personal website designed to share moments and experiences from 
 - **[Vite](https://vitejs.dev/):** A fast build tool and development server for modern web projects.
 - **[React](https://reactjs.org/):** A JavaScript library for building user interfaces.
 - **[Spline](https://spline.design/):** A design tool for 3D web experiences.
+- **[Vercel](https://vercel.com/signup):** A seamless deployment tool.
 
 ## Features
 - Work Experience Timeline
