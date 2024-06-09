@@ -1,8 +1,27 @@
-# React + Vite
+# CH's Space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to CH's Space! This is a cute and simple personal website that showcases little snippets of my life.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Issues and Bugs](#issues-and-bugs)
+- [Contact](#contact)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Introduction
+CH's Space is a personal website designed to share moments and experiences from my life in a visually appealing and interactive way. Built with modern web technologies, it offers a smooth and responsive user experience.
+
+## Technologies Used
+- **[Vite](https://vitejs.dev/):** A fast build tool and development server for modern web projects.
+- **[React](https://reactjs.org/):** A JavaScript library for building user interfaces.
+- **[Spline](https://spline.design/):** A design tool for 3D web experiences.
+
+## Features
+- Work Experience Timeline
+- Photo galleries
+- Interactive 3D elements
+- Responsive design for all devices
+
+## Issues and Bugs
+- Close button not working on safari on mobile devices
