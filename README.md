@@ -1,6 +1,7 @@
 # CH's Space
 
 Welcome to CH's Space! This is a cute and simple personal website that showcases little snippets of my life.
+Visit CH's Space here -> https://ch-space.vercel.app/ 
 
 ## Table of Contents
 - [Introduction](#introduction)
