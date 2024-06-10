@@ -9,7 +9,7 @@ const Contact = () => {
         <div className="flex items-center space-x-4">
           <AiFillGithub size={30}/>
           <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
-            <a href="https://github.com/Limchienhui" target="_blank">GitHub</a>
+            <a href="https://github.com/Winterberrying" target="_blank">GitHub</a>
           </p>
         </div>
         <div className="flex items-center space-x-4">
