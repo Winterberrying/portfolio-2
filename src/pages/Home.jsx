@@ -50,7 +50,7 @@ const Home = () => {
 
   const closeProjectModal = () => {
     setIsProjectModalOpen(false);
-    splineObject.current.emitEvent('keyDown', 'PC Monitor');
+    splineObject.current.emitEvent('keyDown', 'pc');
     console.log('Return Home');
   };
 
