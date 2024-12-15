@@ -9,7 +9,7 @@ const Loader = () => {
         const nextProgress = prev + 10; // Increment progress by 10
         return nextProgress >= 100 ? 100 : nextProgress; // Cap progress at 100
       });
-    }, 1000); // Update every xxxms (adjust to control speed)
+    }, 2000); // Update every xxxms (adjust to control speed)
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
