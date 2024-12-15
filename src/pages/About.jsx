@@ -40,7 +40,7 @@ const About = () => {
         </p>
         <p className="text-lg leading-normal font-normal xl:text-xl text-gray-800">
           I've developed strong theoretical understanding and practical skills in software development and 
-          AI/ML engineering during my university journey. In addition, I've explored <b>Web Development</b>, blending creativity 
+          AI/ML engineering during my university journey. In addition, I've explored <b>Software Engineering</b>, blending creativity 
           with technical precision. I'm driven by continuous learning and improvement and look forward to applying my skills 
           in real-world settings to contribute to impactful projects and collaborate with like-minded professionals.
         </p>
