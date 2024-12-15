@@ -9,14 +9,14 @@ const Loader = () => {
         const nextProgress = prev + 10; // Increment progress by 10
         return nextProgress >= 100 ? 100 : nextProgress; // Cap progress at 100
       });
-    }, 200); // Update every 200ms (adjust to control speed)
+    }, 1000); // Update every xxxms (adjust to control speed)
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
   return (
     <div className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-50">
-      <div className="w-3/4 bg-gray-200 rounded-full h-4">
+      <div className="w-2/4 bg-gray-200 rounded-full h-4">
         <div
           className="bg-blue-300 h-4 rounded-full transition-all"
           style={{ width: `${progress}%` }}
