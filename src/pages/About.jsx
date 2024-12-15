@@ -34,7 +34,7 @@ const About = () => {
       <h1 className="mb-4 ml-4 mr-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">Chien Hui</h1>
       <div className='flex flex-col items-center space-y-4 text-center'>
         <p className="text-lg leading-normal font-normal xl:text-xl text-gray-800">
-          As a final year Computer Science student, I'm deeply passionate about algorithms and their uses in problem solving. 
+          As a Computer Science graduate from Nanyang Technological University (NTU), I'm deeply passionate about algorithms and their uses in problem solving. 
           I'm particularly interested in <b>Artificial Intelligence and Machine Learning</b> and aspire to innovate and lead in 
           these fields.
         </p>

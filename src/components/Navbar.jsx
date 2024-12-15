@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
-const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleModal }) => {
+const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleModal, openProjectModal }) => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
 
@@ -11,6 +11,7 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
   };
 
   const handleNavItemClick = (action) => {
+    console.log(`Clicked nav item: ${action.name}`);
     action();
     setNav(false); // Close the mobile menu after clicking a link
   };
@@ -19,6 +20,7 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
   const navItems = [
     { id: 1, text: 'Home', href: '/' },
     { id: 2, text: 'About', action: openAboutModal },
+    { id: 6, text: 'Projects', action: openProjectModal },
     { id: 3, text: 'People', action: openPeopleModal },
     { id: 4, text: 'Contact', action: openContactModal },
     { id: 5, text: 'Hobbies', action: openHobbyModal },

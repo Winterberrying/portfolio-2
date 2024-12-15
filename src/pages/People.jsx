@@ -15,13 +15,13 @@ const People = () => {
     {
       year: "2001",
       name: "Family 👩‍👧‍👦",
-      description: "The people who have been there for me since day one, my family. They have supported me through thick and thin, and I am forever grateful for their love and care.",
+      description: "The people who have been there for me since day one, my family.",
       image: "/photos/avatar/fam.png"
     },
     {
       year: "2013",
       name: "S 🌼",
-      description: "My childhood best friend, we met in 2009 and grew closer around 2012-2013. She is full of positive energy, discipline, tenacity, and passion.",
+      description: "My childhood best friend, we met in 2009 and grew closer around 2012-2013.",
       image: "/photos/avatar/st.png"
     },
     {
@@ -39,25 +39,25 @@ const People = () => {
     {
       year: "2021",
       name: "J 💎",
-      description: "A kind and caring soul who has been there for me through thick and thin. She is tough and resilient, the definition of strong, independent woman.",
+      description: "A kind and caring soul who has been there for me through thick and thin.",
       image: "/photos/avatar/j.png"
     },
     {
       year: "2022",
       name: "R 💕",
-      description: "My boyfriend, the person who was there during my lowest point, who helped me pick myself up and find my way back to the light. He is a smart and calm individual who always does his best at everything.",
+      description: "The person who was there during my lowest point.",
       image: "/photos/avatar/r.png"
     },
     {
       year: "2022",
       name: "A & C 🌟",
-      description: "Two of my project mates who I worked with on a project in 2022. They are both talented, hardworking, and dedicated individuals.",
+      description: "Two of my project mates who I worked with on a project in 2022.",
       image: "/photos/avatar/dinner.png"
     },
     {
       year: "2023",
       name: "D 🎀",
-      description: "My desk mate for a module in 2023, she is a kind and caring soul who is always there to lend a listening ear.",
+      description: "My desk mate for a module in 2023.",
       image: "/photos/avatar/d.png"
     }
   ];
@@ -82,7 +82,7 @@ const People = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 xl:ml-40 xl:mr-40">
+    <div className="flex flex-col items-center p-6 xl:ml-20 xl:mr-20">
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">People</h1>
       <h2 className="mb-8 text-lg leading-normal font-normal xl:text-xl text-gray-800 text-center">
         Here are some of the people who have come into my life, and for whom I am extremely grateful.
@@ -140,4 +140,3 @@ const PeopleCard = ({ year, name, description, image, isHighlighted }) => (
 );
 
 export default People;
-``

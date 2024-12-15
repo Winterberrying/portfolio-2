@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef, useEffect } from 'react';
 import Modal from '../components/Modal';
-import { About, Contact, Hobbies, People } from '.';
+import { About, Contact, Hobbies, People, Projects } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
@@ -12,6 +12,7 @@ const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isHobbyModalOpen, setIsHobbyModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const splineObject = useRef();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,6 +21,7 @@ const Home = () => {
     setIsContactModalOpen(false);
     setIsHobbyModalOpen(false);
     setIsPhotoModalOpen(false);
+    setIsProjectModalOpen(false);
   };
 
   const closeContactModal = () => {
@@ -46,6 +48,12 @@ const Home = () => {
     console.log('Return Home');
   };
 
+  const closeProjectModal = () => {
+    setIsProjectModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'PC Monitor');
+    console.log('Return Home');
+  };
+
   const openAboutModal = () => {
     closeModals();
     setIsAboutModalOpen(true);
@@ -64,6 +72,11 @@ const Home = () => {
   const openPhotoModal = () => {
     closeModals();
     setIsPhotoModalOpen(true);
+  };
+
+  const openProjectModal = () => {
+    closeModals();
+    setIsProjectModalOpen(true);
   };
 
   const onLoad = (spline) => {
@@ -102,11 +115,17 @@ const Home = () => {
         setIsPhotoModalOpen(true);
       }, 3000);
     }
+    if (e.target.name === 'pc') {
+      console.log('PC has been clicked!');
+      setTimeout(() => {
+        setIsProjectModalOpen(true);
+      }, 3000);
+    }
   };
 
   return (
     <div>
-      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} />
+      <Navbar openAboutModal={openAboutModal} openContactModal={openContactModal} openHobbyModal={openHobbyModal} openPeopleModal={openPhotoModal} openProjectModal={openProjectModal}/>
       <section className="w-full h-screen relative">
         {isLoading && <Loader />}
         <Spline 
@@ -153,6 +172,16 @@ const Home = () => {
             </button>
           </div>
           <People />
+        </div>
+      </Modal>
+      <Modal isOpen={isProjectModalOpen}>
+        <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
+          <div className="flex justify-end">
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeProjectModal}>
+              <AiOutlineClose size={24} />
+            </button>
+          </div>
+          <Projects />
         </div>
       </Modal>
     </div>
