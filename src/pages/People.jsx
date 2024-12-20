@@ -85,7 +85,7 @@ const People = () => {
     <div className="flex flex-col items-center p-6 xl:ml-20 xl:mr-20">
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">People</h1>
       <h2 className="mb-8 text-lg leading-normal font-normal xl:text-xl text-gray-800 text-center">
-        Here are some of the people who have come into my life, and for whom I am extremely grateful.
+        Here are somme of my friends and family who have been there for me through thick and thin.
       </h2>
       <div className='flex flex-row w-full justify-between space-x-4 lg:mb-8 md:mb-8 sm:mb-2'>
         <button
