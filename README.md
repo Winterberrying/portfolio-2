@@ -27,3 +27,8 @@ CH's Space is a personal website designed to share moments and experiences from 
 
 ## Issues and Bugs
 - Close button not working on safari on mobile devices
+
+
+## Video Demo
+https://github.com/user-attachments/assets/23fb5083-8846-40cf-b10c-4b6ba076c63c
+
