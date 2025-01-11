@@ -27,6 +27,7 @@ CH's Space is a personal website designed to share moments and experiences from 
 
 ## Issues and Bugs
 - Close button not working on safari on mobile devices
+- Molang Not clickable on safari on mobile devices
 
 
 ## Video Demo
