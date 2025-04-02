@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef, useEffect } from 'react';
 import Modal from '../components/Modal';
-import { About, Contact, Hobbies, People, Projects } from '.';
+import { About, Contact, Hobbies, People, Projects, Certs } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
@@ -14,6 +14,7 @@ const Home = () => {
   const [isHobbyModalOpen, setIsHobbyModalOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const [isCertModalOpen, setIsCertModalOpen] = useState(false);
   const splineObject = useRef();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,6 +24,7 @@ const Home = () => {
     setIsHobbyModalOpen(false);
     setIsPhotoModalOpen(false);
     setIsProjectModalOpen(false);
+    setIsCertModalOpen(false)
   };
 
   const closeContactModal = () => {
@@ -55,6 +57,12 @@ const Home = () => {
     console.log('Return Home');
   };
 
+  const closeCertModal = () => {
+    setIsCertModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'plant 2');
+    console.log('Return Home');
+  };
+
   const openAboutModal = () => {
     closeModals();
     setIsAboutModalOpen(true);
@@ -79,6 +87,12 @@ const Home = () => {
     closeModals();
     setIsProjectModalOpen(true);
   };
+
+  const openCertModal = () => {
+    closeModals();
+    setIsCertModalOpen(true);
+  };
+
 
   const onLoad = (spline) => {
     setIsLoading(false);
@@ -122,6 +136,12 @@ const Home = () => {
         setIsProjectModalOpen(true);
       }, 3000);
     }
+    if (e.target.name === 'plant 2') {
+      console.log('Plant has been clicked!');
+      setTimeout(() => {
+        setIsCertModalOpen(true);
+      }, 3000);
+    }
   };
 
   return (
@@ -148,7 +168,7 @@ const Home = () => {
                   iconColor: 'white',
                   // customIconSrc: '../public/chat.svg',
                   autoWindowOpen: {
-                      autoOpen: true,
+                      autoOpen: false,
                       openDelay: 2,
                       autoOpenOnMobile: false
                   }
@@ -279,6 +299,16 @@ const Home = () => {
             </button>
           </div>
           <Projects />
+        </div>
+      </Modal>
+      <Modal isOpen={isCertModalOpen}>
+        <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
+          <div className="flex justify-end">
+            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeCertModal}>
+              <AiOutlineClose size={24} />
+            </button>
+          </div>
+          <Certs />
         </div>
       </Modal>
     </div>
