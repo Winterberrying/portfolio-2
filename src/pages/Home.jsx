@@ -146,7 +146,7 @@ const Home = () => {
                   size: 48,
                   dragAndDrop: true,
                   iconColor: 'white',
-                  customIconSrc: '../public/chat.svg',
+                  // customIconSrc: '../public/chat.svg',
                   autoWindowOpen: {
                       autoOpen: true,
                       openDelay: 2,
