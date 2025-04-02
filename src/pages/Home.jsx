@@ -4,6 +4,7 @@ import { About, Contact, Hobbies, People, Projects } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
+import { BubbleChat } from 'flowise-embed-react'
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -134,6 +135,102 @@ const Home = () => {
           onLoad={onLoad} 
         />
       </section>
+      <BubbleChat
+            chatflowid="faf8ef01-2c0e-4af1-89b5-d3ab4e9aaeff"
+            apiHost="https://flowise-i9q4.onrender.com"
+            theme={{    
+              button: {
+                  backgroundColor: '#aabfb8',
+                  right: 20,
+                  bottom: 20,
+                  size: 48,
+                  dragAndDrop: true,
+                  iconColor: 'white',
+                  customIconSrc: '../public/chat.svg',
+                  autoWindowOpen: {
+                      autoOpen: true,
+                      openDelay: 2,
+                      autoOpenOnMobile: false
+                  }
+              },
+              tooltip: {
+                  showTooltip: true,
+                  tooltipMessage: 'Hi There 👋!',
+                  tooltipBackgroundColor: 'black',
+                  tooltipTextColor: 'white',
+                  tooltipFontSize: 16
+              },
+              disclaimer: {
+                  title: 'Disclaimer',
+                  message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
+                  textColor: 'black',
+                  buttonColor: '#3b82f6',
+                  buttonText: 'Start Chatting',
+                  buttonTextColor: 'white',
+                  blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  backgroundColor: 'white'
+              },
+              customCSS: ``,
+              chatWindow: {
+                  showTitle: true,
+                  showAgentMessages: true,
+                  title: 'Flowise Bot',
+                  // titleAvatarSrc: '../public/chat.svg',
+                  welcomeMessage: "Hello! This is Chien Hui's Bot! Ask Me Anything!",
+                  errorMessage: 'This is a custom error message',
+                  backgroundColor: '#ffffff',
+                  backgroundImage: 'enter image path or link',
+                  height: 700,
+                  width: 400,
+                  fontSize: 16,
+                  starterPrompts: [
+                      "Tell me more about Chien Hui"
+                  ],
+                  starterPromptFontSize: 15,
+                  clearChatOnReload: false,
+                  sourceDocsTitle: 'Sources:',
+                  renderHTML: true,
+                  botMessage: {
+                      backgroundColor: '#f7f8ff',
+                      textColor: '#303235',
+                      showAvatar: false,
+                      avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
+                  },
+                  userMessage: {
+                      backgroundColor: '#aabfb8',
+                      textColor: '#ffffff',
+                      showAvatar: false,
+                      avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                  },
+                  textInput: {
+                      placeholder: 'Type your question',
+                      backgroundColor: '#ffffff',
+                      textColor: '#303235',
+                      sendButtonColor: '#aabfb8',
+                      maxChars: 50,
+                      maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
+                      autoFocus: true,
+                      sendMessageSound: true,
+                      sendSoundLocation: 'send_message.mp3',
+                      receiveMessageSound: true,
+                      receiveSoundLocation: 'receive_message.mp3'
+                  },
+                  feedback: {
+                      color: '#303235'
+                  },
+                  dateTimeToggle: {
+                      date: true,
+                      time: true
+                  },
+                  footer: {
+                      textColor: '#303235',
+                      text: 'Powered by',
+                      company: 'Flowise',
+                      companyLink: 'https://flowiseai.com'
+                  }
+              }
+            }}
+      />
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
