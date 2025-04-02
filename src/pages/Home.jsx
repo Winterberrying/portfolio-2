@@ -59,7 +59,7 @@ const Home = () => {
 
   const closeCertModal = () => {
     setIsCertModalOpen(false);
-    splineObject.current.emitEvent('keyDown', 'plant 2');
+    splineObject.current.emitEvent('keyDown', 'plant-2');
     console.log('Return Home');
   };
 
@@ -136,7 +136,7 @@ const Home = () => {
         setIsProjectModalOpen(true);
       }, 3000);
     }
-    if (e.target.name === 'plant 2') {
+    if (e.target.name === 'plant-2') {
       console.log('Plant has been clicked!');
       setTimeout(() => {
         setIsCertModalOpen(true);
