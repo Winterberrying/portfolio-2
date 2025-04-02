@@ -3,16 +3,6 @@ import * as Avatar from '@radix-ui/react-avatar';
 
 const hobbies = [
   {
-    title: "Watching Korean Variety Shows 📺",
-    image: "/photos/hobby/1.png",
-    description: "I’m a huge fan of Korean variety shows, spanning from romantic dating shows to thrilling puzzle-solving and challenge-based programs. I particularly enjoy the light-hearted, comedic ones like Running Man and I Live Alone that help me forget all my worries, as well as the soothing, calming ones like Lee Mujin Service.",
-  },
-  {
-    title: "Eating Desserts 🍦",
-    image: "/photos/hobby/2.png",
-    description: "Eating desserts is one of my favorite pastimes. From rich chocolate cakes and creamy cheesecakes to fruity tarts and delicate pastries, I find delight in exploring a wide variety of sweet treats. I love visiting different cafes and bakeries to discover new flavors and textures, and nothing beats the joy of indulging in a well-crafted dessert that perfectly satisfies my sweet tooth.",
-  },
-  {
     title: "Traveling 🌍",
     image: "/photos/hobby/3.png",
     description: "I feel incredibly fortunate to have traveled to some amazing places around the world. In Malaysia, Johor Bahru (JB) offered vibrant culture and cuisine. Thailand provided unforgettable experiences in Bangkok, Khao Yai, Ayutthaya, and Kanchanaburi. Japan's Tokyo, Kyoto, and Osaka showcased a blend of tradition and modernity. Taiwan captivated me with Taipei, Taichung, Tainan, Kaohsiung, and Hualien. Australia impressed with the Gold Coast, Perth, Melbourne, and the Great Ocean Road. Each destination has enriched my life with unforgettable memories.",
@@ -23,15 +13,10 @@ const hobbies = [
     description: "Music is my life and soul. I was first introduced to the world of music through C-pop, with artists like JJ Lin, Jay Chou, and A-Lin. From there, I explored the classic pop bangers of the early 2010s and more recently, trendy K-pop songs. My passion for music extends beyond listening; I've had the opportunity to play various instruments. I started with the piano in primary school, moved on to the guitar in secondary school, learned the guzheng in junior college, and recently, I've been trying out the kalimba and picking up my guitar again.",
   },
   {
-    title: "Playing Video Games 🎮",
-    image: "/photos/hobby/5.png",
-    description: "I used to be the kind of person who didn't understand how someone could spend their entire day gaming. That changed when my boyfriend introduced me to the world of video gaming. We started with RimWorld, PlateUp and Anno 1800, and I quickly found solace in cozy games like Stardew Valley and PuffPals. I'm now eagerly awaiting the release of Loftia, a game I'm a big fan of for its art style and gameplay. Gaming helps me destress and offers a whole new experience and world to explore.",
+    title: "Running 🏃🏻‍♀️",
+    image: "/photos/hobby/7.png",
+    description: "I took up running as a hobby in mid-2024 while navigating post-graduation anxiety and uncertainty. It became my way to de-stress and stay active during a challenging time.",
   },
-  {
-    title: "Art and Puzzles 🎨",
-    image: "/photos/hobby/6.png",
-    description: "Art and creative hobbies have always been a significant part of my life. I enjoy a variety of activities that allow me to express my creativity and challenge my mind. I've delved into punch needle art, converting photos into cartoonized versions, and diamond painting. Paint by numbers offers a relaxing way to create beautiful pieces, while claw machines, Rubik's cubes, and wire puzzles keep my problem-solving skills sharp. These hobbies provide a perfect balance of relaxation and mental stimulation, fueling my passion for creativity.",
-  }
 ];
 
 const Hobbies = () => {
