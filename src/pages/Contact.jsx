@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillInstagram } from 'react-icons/ai';
 
 const Contact = () => {
   return (
@@ -16,6 +16,12 @@ const Contact = () => {
           <AiFillLinkedin size={30}/>
           <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
             <a href="https://www.linkedin.com/in/chien-hui-lim-892829279/" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+        <div className="flex items-center space-x-4">
+          <AiFillInstagram size={30}/>
+          <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
+            <a href="https://www.instagram.com/ch.bytes/" target="_blank">Instagram</a>
           </p>
         </div>
         <div className="flex items-center space-x-4">

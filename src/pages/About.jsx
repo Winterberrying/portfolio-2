@@ -47,25 +47,32 @@ const About = () => {
       </div>
       <h2 className="m-4 text-xl text-center uppercase font-extrabold tracking-tight md:text-2xl xl:text-3xl text-black">Work Experience</h2>
       <div className='space-y-4 w-full max-w-4xl'>
+      <ExperienceCard 
+          date="Jul 2024 — Oct 2024" 
+          title="AI Engineer Intern" 
+          company="Augmentus" 
+          description="Collaborated on an AI-powered defect detection system for airplane blades using computer vision and a Python-based GUI."
+          skills={['Python', 'Computer Vision', 'Model Training']}
+        />
         <ExperienceCard 
           date="Dec 2023 — Mar 2024" 
           title="Tech Intern" 
           company="SomTamLabs (STL), Bangkok" 
-          description="Designed conceptual graphics of the project to enhance stakeholder understanding. Developed a grouping algorithm for the project. Created a web scraper to generate JSON files with essential data, to help build an AI-chatbot. Investigated chatbot integration options using Flowise AI to enhance user engagement."
-          skills={['Python', 'Flowise AI', 'Figma']}
+          description="Automated data extraction, designed UI concepts in Figma, and researched a RAG chatbot for a client project."
+          skills={['Python', 'Flowise AI', 'Figma', 'Retrieval Augmented Generation (RAG)']}
         />
         <ExperienceCard 
           date="Dec 2022 — May 2023" 
           title="AI & Cyber Intern" 
           company="Home Team Science and Technology (HTX), Singapore" 
-          description="Acquired expertise in web scraping, employing Python libraries, Scrapy and Selenium to develop a video downloader."
+          description="Built a custom video downloader and contributed to a social media analytics pipeline, employing Python libraries, Scrapy and Selenium."
           skills={['Python', 'Web Scraping', 'Selenium', 'BeautifulSoup4']}
         />
         <ExperienceCard 
           date="May 2021 — Aug 2021" 
-          title="Project Intern" 
+          title="IT Project Intern" 
           company="Quality Zone Technologies (QZT), Singapore" 
-          description="Assisted in various software development projects, focusing on good documentation and quality assurance."
+          description="Drafted technical specifications for grant proposals and conducted UAT to ensure software quality."
           skills={['Documentation', 'Technical Specifications Writing', "User Acceptance Testing"]}
         />
       </div>
