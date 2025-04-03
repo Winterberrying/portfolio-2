@@ -77,12 +77,10 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
             className='p-4 ml-2 rounded-xl hover:bg-[#aabfb8] duration-300 hover:text-white cursor-pointer'
             onClick={() => item.action ? handleNavItemClick(item.action) : handleNav()}
           >
-            {item.href ? (
-              <a href={item.href}>{item.text}</a>) : (
-              <a>{item.text}</a>)
-            }
+            <a href={item.href || '#'} className="block w-full h-full">{item.text}</a>
           </li>
         ))}
+
       </ul>
       </div>
       </div>
