@@ -5,6 +5,7 @@ import Loader from '../components/Loader';
 import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
 import { BubbleChat } from 'flowise-embed-react'
+import { motion } from "framer-motion";
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -17,6 +18,7 @@ const Home = () => {
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
   const splineObject = useRef();
   const [isLoading, setIsLoading] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   const closeModals = () => {
     setIsAboutModalOpen(false);
@@ -155,6 +157,36 @@ const Home = () => {
           onLoad={onLoad} 
         />
       </section>
+      <div className="fixed top-4 md:top-24 right-4 z-50">
+        {/* Hover Area */}
+        <div
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Button */}
+          <button className="bg-[#aabfb8] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl">
+          ?
+          </button>
+
+          {/* Modal */}
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute right-0 mt-2 w-48 p-4 bg-[#ffffff44] backdrop-blur-lg rounded-lg shadow-lg"
+            >
+              <p className="text-sm text-black font-semibold">How to Navigate:</p>
+              <ul className="text-xs text-black mt-1">
+              <li>• Move your cursor over objects to see which ones can be interacted with.</li>
+              <li>• Click on an interactable object to reveal more information about it.</li>
+              </ul>
+            </motion.div>
+          )}
+        </div>
+      </div>
       <BubbleChat
             chatflowid="faf8ef01-2c0e-4af1-89b5-d3ab4e9aaeff"
             apiHost="https://flowise-i9q4.onrender.com"
@@ -174,7 +206,7 @@ const Home = () => {
                   }
               },
               tooltip: {
-                  showTooltip: true,
+                  showTooltip: false,
                   tooltipMessage: 'Hi There 👋!',
                   tooltipBackgroundColor: 'black',
                   tooltipTextColor: 'white',
@@ -194,7 +226,7 @@ const Home = () => {
               chatWindow: {
                   showTitle: true,
                   showAgentMessages: true,
-                  title: 'Flowise Bot',
+                  title: "Chien Hui's Bot",
                   // titleAvatarSrc: '../public/chat.svg',
                   welcomeMessage: "Hello! This is Chien Hui's Bot! Ask Me Anything!",
                   errorMessage: 'This is a custom error message',
