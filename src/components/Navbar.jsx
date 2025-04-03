@@ -52,21 +52,24 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
             </li>
           ))}
         </ul>
-
+            
       {/* Mobile Navigation Menu */}
-      <ul
+      <div
         className={
           nav
             ? 'fixed md:hidden left-0 top-0 w-[60%] h-full bg-white ease-in-out duration-500'
             : 'fixed md:hidden left-[-100%] top-0 w-[60%] h-full ease-in-out duration-500'
-        }
-      >
-        {/* Close Button */}
-        {nav && (
-          <div onClick={handleNav} className='p-4 hover:text-gray-600 cursor-pointer mb-4'>
+        }>
+      
+      {/* Close Button */}
+      {nav && (
+          <div onClick={handleNav} className='p-6 hover:text-gray-600 cursor-pointer'>
             <AiOutlineMenu size={24} className='absolute top-6 left-6' />
           </div>
         )}
+
+      <ul>
+        
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
           <li
@@ -81,6 +84,7 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
           </li>
         ))}
       </ul>
+      </div>
       </div>
    </header>
   )

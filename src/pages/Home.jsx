@@ -336,7 +336,7 @@ const Home = () => {
       <Modal isOpen={isCertModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeCertModal} onTouchStart={closeCertModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 bg-white/80 rounded-full hover:bg-white transition" style={{ marginTop: '20px'}} onClick={closeCertModal} onTouchStart={closeCertModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
