@@ -37,8 +37,8 @@ const Modal = ({ isOpen, closeModal, children }) => {
         onTouchStart={closeModal} // Handle touch start for mobile
         style={{
           position: 'absolute', // Absolute positioning inside the modal
-          right: '20px', // Position the button at the right end
-          top: '20px', // Adjust this value as needed
+          right: '40px', // Position the button at the right end
+          top: '40px', // Adjust this value as needed
           cursor: 'pointer', // Ensure it's clickable
           touchAction: 'manipulation', // Prevent default scrolling behavior on mobile
           zIndex: 50, // Ensure it stays on top
