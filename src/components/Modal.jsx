@@ -32,15 +32,14 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
     >
       {/* Close Button */}
       <button
-        className="absolute top-2 right-14 bg-none border-none cursor-pointer z-10 p-2 bg-white/80 rounded-full hover:bg-white transition"
+        // className="absolute top-2 right-14 bg-none border-none cursor-pointer z-10 p-2 bg-white/80 rounded-full hover:bg-white transition"
         onClick={onRequestClose}
-        onTouchStart={onRequestClose}
+        // onTouchStart={onRequestClose}
         style={{
           marginTop: '20px',
         }}
       >
-        {/* <AiOutlineClose size={24} /> */}
-        close
+        <AiOutlineClose size={24} />
       </button>
 
 
