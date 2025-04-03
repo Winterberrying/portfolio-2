@@ -16,7 +16,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-6 xl:ml-40 xl:mr-40">
+    <div className="flex flex-col items-center p-6">
       <Avatar.Root className="inline-flex items-center justify-center overflow-hidden rounded-full w-56 h-56 mt-4">
         <Avatar.Image
           className="w-full h-full object-cover"
@@ -50,7 +50,7 @@ const About = () => {
       <ExperienceCard 
           date="Jul 2024 — Oct 2024" 
           title="AI Engineer Intern" 
-          company="Augmentus" 
+          company="Augmentus, Singapore" 
           description="Collaborated on an AI-powered defect detection system for airplane blades using computer vision and a Python-based GUI."
           skills={['Python', 'Computer Vision', 'Model Training']}
         />

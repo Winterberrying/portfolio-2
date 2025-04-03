@@ -82,7 +82,7 @@ const People = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 xl:ml-20 xl:mr-20">
+    <div className="flex flex-col items-center p-6">
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">People</h1>
       <h2 className="mb-8 text-lg leading-normal font-normal xl:text-xl text-gray-800 text-center">
         Here are somme of my friends and family who have been there for me through thick and thin.
