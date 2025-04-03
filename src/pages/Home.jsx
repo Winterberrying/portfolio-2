@@ -283,63 +283,39 @@ const Home = () => {
               }
             }}
       />
-      <Modal isOpen={isAboutModalOpen}>
+      <Modal isOpen={isAboutModalOpen} onRequestClose={closeAboutModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeAboutModal} onTouchStart={closeAboutModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <About />
         </div>
       </Modal>
-      <Modal isOpen={isContactModalOpen}>
+      <Modal isOpen={isContactModalOpen} onRequestClose={closeContactModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeContactModal} onTouchStart={closeContactModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <Contact />
         </div>
       </Modal>
-      <Modal isOpen={isHobbyModalOpen}>
+      <Modal isOpen={isHobbyModalOpen} onRequestClose={closeHobbyModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeHobbyModal} onTouchStart={closeHobbyModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <Hobbies />
         </div>
       </Modal>
-      <Modal isOpen={isPhotoModalOpen}>
+      <Modal isOpen={isPhotoModalOpen} onRequestClose={closePhotoModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closePhotoModal} onTouchStart={closePhotoModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <People />
         </div>
       </Modal>
-      <Modal isOpen={isProjectModalOpen}>
+      <Modal isOpen={isProjectModalOpen} onRequestClose={closeProjectModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeProjectModal} onTouchStart={closeProjectModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <Projects />
         </div>
       </Modal>
-      <Modal isOpen={isCertModalOpen}>
+      <Modal isOpen={isCertModalOpen} onRequestClose={closeCertModal}>
         <div className="flex flex-col m-4 justify-center">
-          <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 bg-white/80 rounded-full hover:bg-white transition" style={{ marginTop: '20px'}} onClick={closeCertModal} onTouchStart={closeCertModal}>
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
+
           <Certs />
         </div>
       </Modal>
