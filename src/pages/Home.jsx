@@ -157,7 +157,7 @@ const Home = () => {
           onLoad={onLoad} 
         />
       </section>
-      <div className="fixed top-4 md:top-24 right-4 z-50">
+      <div className="fixed top-4 md:top-24 right-4 z-2">
         {/* Hover Area */}
         <div
           className="relative"
@@ -222,7 +222,11 @@ const Home = () => {
                   blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
                   backgroundColor: 'white'
               },
-              customCSS: ``,
+              customCSS:  `
+                .flowise-chat-container {
+                  z-index: -1 !important;
+                }
+              `,
               chatWindow: {
                   showTitle: true,
                   showAgentMessages: true,
