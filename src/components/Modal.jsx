@@ -39,7 +39,8 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           marginTop: '20px',
         }}
       >
-        <AiOutlineClose size={24} />
+        {/* <AiOutlineClose size={24} /> */}
+        close
       </button>
 
 
