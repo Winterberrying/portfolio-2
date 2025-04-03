@@ -286,7 +286,7 @@ const Home = () => {
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeAboutModal} onTouchStart={closeAboutModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeAboutModal} onTouchStart={closeAboutModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -296,7 +296,7 @@ const Home = () => {
       <Modal isOpen={isContactModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeContactModal} onTouchStart={closeContactModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeContactModal} onTouchStart={closeContactModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -306,7 +306,7 @@ const Home = () => {
       <Modal isOpen={isHobbyModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeHobbyModal} onTouchStart={closeHobbyModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeHobbyModal} onTouchStart={closeHobbyModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -316,7 +316,7 @@ const Home = () => {
       <Modal isOpen={isPhotoModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closePhotoModal} onTouchStart={closePhotoModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closePhotoModal} onTouchStart={closePhotoModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -326,7 +326,7 @@ const Home = () => {
       <Modal isOpen={isProjectModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeProjectModal} onTouchStart={closeProjectModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeProjectModal} onTouchStart={closeProjectModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
@@ -336,7 +336,7 @@ const Home = () => {
       <Modal isOpen={isCertModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="sticky top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeCertModal} onTouchStart={closeCertModal}>
+            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeCertModal} onTouchStart={closeCertModal}>
               <AiOutlineClose size={24} />
             </button>
           </div>
