@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 ReactModal.setAppElement('#root'); // Ensure accessibility
 
-const Modal = ({ isOpen, closeModal, children }) => {
+const Modal = ({ isOpen, onRequestClose, children }) => {
   return (
     <ReactModal
       isOpen={isOpen}
@@ -33,8 +33,8 @@ const Modal = ({ isOpen, closeModal, children }) => {
     >
       {/* Close Button */}
       <button
-        onClick={closeModal} // Handle click
-        onTouchStart={closeModal} // Handle touch start for mobile
+        onClick={onRequestClose} // Handle click
+        onTouchStart={onRequestClose} // Handle touch start for mobile
         style={{
           position: 'absolute', // Absolute positioning inside the modal
           right: '40px', // Position the button at the right end
