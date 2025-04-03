@@ -4,8 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 ReactModal.setAppElement('#root'); // Ensure accessibility
 
-const Modal = ({ isOpen, onRequestClose, children }) => {
-
+const Modal = ({ isOpen, closeModal, children }) => {
   return (
     <ReactModal
       isOpen={isOpen}
@@ -27,27 +26,45 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           height: 'clamp(300px, 80vh, 700px)', // Ensures it grows dynamically
           display: 'flex',
           flexDirection: 'column',
+          position: 'relative', // Ensure positioning is relative to the modal content
+          overflow: 'hidden', // Hide scrollbar on modal content
         },
       }}
     >
       {/* Close Button */}
       <button
-        // className="absolute top-2 right-14 bg-none border-none cursor-pointer z-10 p-2 bg-white/80 rounded-full hover:bg-white transition"
-        onClick={onRequestClose}
-        // onTouchStart={onRequestClose}
+        onClick={closeModal} // Handle click
+        onTouchStart={closeModal} // Handle touch start for mobile
         style={{
-          marginTop: '20px',
+          position: 'absolute', // Absolute positioning inside the modal
+          right: '20px', // Position the button at the right end
+          top: '20px', // Adjust this value as needed
+          cursor: 'pointer', // Ensure it's clickable
+          touchAction: 'manipulation', // Prevent default scrolling behavior on mobile
+          zIndex: 50, // Ensure it stays on top
         }}
       >
         <AiOutlineClose size={24} />
       </button>
 
-
-
       {/* Modal Content */}
-      <div className="flex-grow overflow-y-auto min-h-0">
+      <div
+        className="flex-grow overflow-y-auto min-h-0"
+        style={{
+          overflowY: 'auto', // Enable scrolling for content
+          paddingRight: '10px', // Add some padding to compensate for hidden scrollbar
+        }}
+      >
         {children}
       </div>
+
+      {/* Hide scrollbar */}
+      <style jsx>{`
+        /* Hide scrollbar in webkit-based browsers */
+        .flex-grow::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </ReactModal>
   );
 };
