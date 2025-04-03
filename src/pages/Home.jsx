@@ -187,6 +187,7 @@ const Home = () => {
           )}
         </div>
       </div>
+      <div id="custom-chat-container" style={{ zIndex: -1,}}>
       <BubbleChat
             chatflowid="faf8ef01-2c0e-4af1-89b5-d3ab4e9aaeff"
             apiHost="https://flowise-i9q4.onrender.com"
@@ -222,11 +223,7 @@ const Home = () => {
                   blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
                   backgroundColor: 'white'
               },
-              customCSS:  `
-                .flowise-chat-container {
-                  z-index: -1 !important;
-                }
-              `,
+              customCSS:  ``,
               chatWindow: {
                   showTitle: true,
                   showAgentMessages: true,
@@ -287,6 +284,7 @@ const Home = () => {
               }
             }}
       />
+      </div>
       <Modal isOpen={isAboutModalOpen} onRequestClose={closeAboutModal}>
         <div className="flex flex-col m-4 justify-center">
 

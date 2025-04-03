@@ -1,40 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactModal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 
 ReactModal.setAppElement('#root'); // Ensure accessibility
 
 const Modal = ({ isOpen, onRequestClose, children }) => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // You can adjust the width to suit your needs
-    };
-
-    // Initial check
-    checkIfMobile();
-
-    // Event listener to handle window resizing
-    window.addEventListener('resize', checkIfMobile);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', checkIfMobile);
-  }, []);
-
-  const handleClick = () => {
-    onRequestClose(); // Handle click event
-  };
-
-  const handlePointerEnter = () => {
-    if (!isMobile) {
-      onRequestClose(); // Handle pointer enter for web
-    }
-  };
-
   return (
     <ReactModal
       isOpen={isOpen}
+      onRequestClose={onRequestClose} // Ensure modal can close when background is clicked
+      shouldCloseOnOverlayClick={true} // Ensure overlay click works
+      shouldCloseOnEsc={true} // Allow closing via ESC key
       style={{
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.3)',
@@ -60,8 +36,11 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
     >
       {/* Close Button */}
       <button
-        onClick={handleClick} // Handle click on both mobile and web
-        onPointerEnter={handlePointerEnter} // Handle pointer enter only on web
+        onClick={onRequestClose} // Handle click
+        onTouchStart={onRequestClose} // Ensures it works on touch devices
+        // onPointerEnter ={onRequestClose}
+        role="button"
+        aria-label="Close Modal"
         style={{
           position: 'absolute', // Absolute positioning inside the modal
           right: '40px', // Position the button at the right end
