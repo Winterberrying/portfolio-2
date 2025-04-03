@@ -6,6 +6,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
 import { BubbleChat } from 'flowise-embed-react'
 import { motion } from "framer-motion";
+import { Button } from '@mui/material';
+import { MdPadding } from 'react-icons/md';
+import { RxPadding } from 'react-icons/rx';
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -286,63 +289,153 @@ const Home = () => {
       <Modal isOpen={isAboutModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeAboutModal} onTouchStart={closeAboutModal}>
-              <AiOutlineClose size={24} />
-            </button>
+            <Button
+              variant="text"
+              onClick={closeAboutModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                borderRadius: '50%',
+                // '&:hover': {
+                //   backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                // },
+              }}
+            >
+              <AiOutlineClose size={16} color='#000000' />
+            </Button>
           </div>
           <About />
         </div>
       </Modal>
+
       <Modal isOpen={isContactModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeContactModal} onTouchStart={closeContactModal}>
+            <Button
+              variant="text"
+              onClick={closeContactModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
               <AiOutlineClose size={24} />
-            </button>
+            </Button>
           </div>
           <Contact />
         </div>
       </Modal>
+
       <Modal isOpen={isHobbyModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeHobbyModal} onTouchStart={closeHobbyModal}>
+            <Button
+              variant="text"
+              onClick={closeHobbyModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
               <AiOutlineClose size={24} />
-            </button>
+            </Button>
           </div>
           <Hobbies />
         </div>
       </Modal>
+
       <Modal isOpen={isPhotoModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closePhotoModal} onTouchStart={closePhotoModal}>
+            <Button
+              variant="text"
+              onClick={closePhotoModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
               <AiOutlineClose size={24} />
-            </button>
+            </Button>
           </div>
           <People />
         </div>
       </Modal>
+
       <Modal isOpen={isProjectModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeProjectModal} onTouchStart={closeProjectModal}>
+            <Button
+              variant="text"
+              onClick={closeProjectModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
               <AiOutlineClose size={24} />
-            </button>
+            </Button>
           </div>
           <Projects />
         </div>
       </Modal>
+
       <Modal isOpen={isCertModalOpen}>
         <div className="flex flex-col h-full m-4 md:m-16 lg:ml-56 lg:mr-56">
           <div className="flex justify-end">
-            <button className="top-0 right-0 bg-none border-none cursor-pointer z-10 p-2 m-2 bg-white/80 rounded-full hover:bg-white transition" onClick={closeCertModal} onTouchStart={closeCertModal}>
+            <Button
+              variant="text"
+              onClick={closeCertModal}
+              sx={{
+                top: 0,
+                right: 0,
+                padding: 2,
+                margin: 2,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '50%',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
               <AiOutlineClose size={24} />
-            </button>
+            </Button>
           </div>
           <Certs />
         </div>
       </Modal>
+
     </div>
   );
 };

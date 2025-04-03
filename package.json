@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.1",
     "@radix-ui/react-avatar": "^1.0.4",
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.105.6",
