@@ -25,8 +25,8 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           border: 'none',
           borderRadius: '12px',
           padding: '24px',
-          width: 'clamp(400px, 80vw, 1000px)', // Expands with window size
-          height: 'clamp(300px, 80vh, 700px)', // Ensures it grows dynamically
+          width: 'clamp(280px, 80vw, 1000px)', // Smaller minimum width for mobile
+          height: 'clamp(200px, 75vh, 700px)', // Smaller minimum height for mobile
           display: 'flex',
           flexDirection: 'column',
           position: 'relative', // Ensure positioning is relative to the modal content
@@ -38,19 +38,18 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
       <button
         onClick={onRequestClose} // Handle click
         onTouchStart={onRequestClose} // Ensures it works on touch devices
-        // onPointerEnter ={onRequestClose}
         role="button"
         aria-label="Close Modal"
         style={{
           position: 'absolute', // Absolute positioning inside the modal
-          right: '40px', // Position the button at the right end
-          top: '40px', // Adjust this value as needed
+          right: '20px', // Adjust for smaller screens
+          top: '20px', // Adjust for smaller screens
           cursor: 'pointer', // Ensure it's clickable
           touchAction: 'manipulation', // Prevent default scrolling behavior on mobile
           zIndex: 50, // Ensure it stays on top
         }}
       >
-        <AiOutlineClose size={24} />
+        <AiOutlineClose size={20} />
       </button>
 
       {/* Modal Content */}

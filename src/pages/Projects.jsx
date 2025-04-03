@@ -66,13 +66,13 @@ const Projects = () => {
         className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-300"
       >
         <FaArrowLeft className="mr-2" />
-        Previous
+        
       </button>
       <button
         onClick={handleNext}
         className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-300"
       >
-        Next
+        
         <FaArrowRight className="ml-2" />
       </button>
     </div>
