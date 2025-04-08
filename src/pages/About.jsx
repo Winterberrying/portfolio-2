@@ -34,15 +34,7 @@ const About = () => {
       <h1 className="mb-4 ml-4 mr-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-black text-center">Chien Hui</h1>
       <div className='flex flex-col items-center space-y-4 text-center'>
         <p className="text-lg leading-normal font-normal xl:text-xl text-gray-800">
-          As a Computer Science graduate from Nanyang Technological University (NTU), I'm deeply passionate about algorithms and their uses in problem solving. 
-          I'm particularly interested in <b>Artificial Intelligence and Machine Learning</b> and aspire to innovate and lead in 
-          these fields.
-        </p>
-        <p className="text-lg leading-normal font-normal xl:text-xl text-gray-800">
-          I've developed strong theoretical understanding and practical skills in software development and 
-          AI/ML engineering during my university journey. In addition, I've explored <b>Software Engineering</b>, blending creativity 
-          with technical precision. I'm driven by continuous learning and improvement and look forward to applying my skills 
-          in real-world settings to contribute to impactful projects and collaborate with like-minded professionals.
+        NTU CS'24 | AI & Data Science Specialisation | Creative and Analytical Problem Solver
         </p>
       </div>
       <h2 className="m-4 text-xl text-center uppercase font-extrabold tracking-tight md:text-2xl xl:text-3xl text-black">Work Experience</h2>

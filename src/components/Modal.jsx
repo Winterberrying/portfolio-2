@@ -31,6 +31,7 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           flexDirection: 'column',
           position: 'relative', // Ensure positioning is relative to the modal content
           overflow: 'hidden', // Hide scrollbar on modal content
+          zIndex: 50
         },
       }}
     >
@@ -46,7 +47,7 @@ const Modal = ({ isOpen, onRequestClose, children }) => {
           top: '20px', // Adjust for smaller screens
           cursor: 'pointer', // Ensure it's clickable
           touchAction: 'manipulation', // Prevent default scrolling behavior on mobile
-          zIndex: 50, // Ensure it stays on top
+          zIndex: 100, // Ensure it stays on top
         }}
       >
         <AiOutlineClose size={20} />

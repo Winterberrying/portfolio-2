@@ -157,7 +157,7 @@ const Home = () => {
           onLoad={onLoad} 
         />
       </section>
-      <div className="fixed top-4 md:top-24 right-4 z-2">
+      <div className="fixed top-4 md:top-24 right-4 z-50">
         {/* Hover Area */}
         <div
           className="relative"
@@ -165,7 +165,7 @@ const Home = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Button */}
-          <button className="bg-[#aabfb8] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl">
+          <button className="bg-[#aabfb8] text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center text-2xl">
           ?
           </button>
 
@@ -286,37 +286,37 @@ const Home = () => {
       />
       </div>
       <Modal isOpen={isAboutModalOpen} onRequestClose={closeAboutModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <About />
         </div>
       </Modal>
       <Modal isOpen={isContactModalOpen} onRequestClose={closeContactModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <Contact />
         </div>
       </Modal>
       <Modal isOpen={isHobbyModalOpen} onRequestClose={closeHobbyModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <Hobbies />
         </div>
       </Modal>
       <Modal isOpen={isPhotoModalOpen} onRequestClose={closePhotoModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <People />
         </div>
       </Modal>
       <Modal isOpen={isProjectModalOpen} onRequestClose={closeProjectModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <Projects />
         </div>
       </Modal>
       <Modal isOpen={isCertModalOpen} onRequestClose={closeCertModal}>
-        <div className="flex flex-col m-4 justify-center">
+        <div className="flex flex-col md:m-4 justify-center">
 
           <Certs />
         </div>

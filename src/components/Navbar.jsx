@@ -28,7 +28,7 @@ const Navbar = ({ openAboutModal, openContactModal, openHobbyModal, openPeopleMo
 
   return (
    <header className='header'>
-     <div className='bg-transparent flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black'>
+     <div className='bg-transparent flex justify-between items-center h-4 md:h-20 max-w-[1240px] mx-auto px-2 text-black'>
 
       {/* Mobile Navigation Icon */}
       <div onClick={handleNav} className='block md:hidden absolute top-6 left-6'>

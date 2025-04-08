@@ -16,6 +16,7 @@
     "@react-three/fiber": "^8.16.6",
     "@splinetool/react-spline": "^3.0.0",
     "@splinetool/runtime": "^1.4.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "flowise-embed": "^2.1.2",
     "flowise-embed-react": "^1.0.7",
     "framer-motion": "^12.6.3",
