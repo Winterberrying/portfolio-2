@@ -5,16 +5,20 @@ export default function Certs() {
     LLMs: [
       { title: 'LLM & Miccrosoft Azure Workshop', issuer: 'NTU CCDS', link: 'https://api.badgr.io/public/assertions/QbIopf_zSAGvDcn7tml5uA?identity__email=CLIM153%40E.NTU.EDU.SG' },
       { title: 'LangChain for LLM Application Development', issuer: 'DeepLearning.AI', link: 'https://learn.deeplearning.ai/accomplishments/4b40f07c-4886-4532-bbdf-208a18531db8?usp=sharing' },
-      { title: 'Google Prompting Essentials', issuer: 'Coursera', link: 'https://coursera.org/share/bb2e05cc2cfd26d408486d1b75106d4c'},
+      { title: 'How Transformer LLMs Work', issuer: 'DeepLearning.AI', link:'https://learn.deeplearning.ai/accomplishments/cc98e320-2c35-437a-bbd1-2454c9ae7e42?usp=sharing' },
+      { title: 'Google Prompting Essentials', issuer: 'Coursera', link: 'https://coursera.org/share/bb2e05cc2cfd26d408486d1b75106d4c'}
     ],
     CV: [
-      
+      { title: 'Build a computer vision app with Azure Cognitive Services', issuer: 'Coursera', link: 'https://coursera.org/share/8e343bd1250622cd4aaec7d6ed6590cc'},
     ],
     'Deep Learning': [
       
     ],
     'Software Engineering': [
       
+    ],
+    'Machine Learning': [
+
     ],
     'Others': [
       { title: 'Aromatherapy', issuer: 'Coursera', link: 'https://coursera.org/share/5c7f9882c9b098cba77ede16308af7be'},
