@@ -39,7 +39,7 @@ const About = () => {
       </div>
       <h2 className="m-4 text-xl text-center uppercase font-extrabold tracking-tight md:text-2xl xl:text-3xl text-black">Work Experience</h2>
       <div className='space-y-4 w-full max-w-4xl'>
-      <ExperienceCard 
+        <ExperienceCard 
           date="Jul 2024 — Oct 2024" 
           title="AI Engineer Intern" 
           company="Augmentus, Singapore" 
@@ -66,6 +66,38 @@ const About = () => {
           company="Quality Zone Technologies (QZT), Singapore" 
           description="Drafted technical specifications for grant proposals and conducted UAT to ensure software quality."
           skills={['Documentation', 'Technical Specifications Writing', "User Acceptance Testing"]}
+        />
+      </div>
+      <div className="relative my-6 w-full max-w-4xl">
+        <hr className="border-t border-gray-500" />
+        <div 
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 text-sm text-black"
+          style={{ backgroundColor: 'rgba(255, 255, 255)', borderRadius: 50 }}
+        >
+          Earlier Roles
+        </div>
+      </div>
+      <div className='space-y-4 w-full max-w-4xl'>
+      <ExperienceCard 
+          date="Dec 2020 - Feb 2021" 
+          title="Part Time" 
+          company="Plain Vanilla, Singapore" 
+          description="Prepped cafe for opening, served customers, and handled cashiering."
+          skills={[]}
+        />
+        <ExperienceCard 
+          date="Mar - Jul 2020" 
+          title="Administrative Staff" 
+          company="Nanyang Polytechnic, Singapore" 
+          description="Sorted and processed payment forms for administrative workflows."
+          skills={[]}
+        />
+        <ExperienceCard 
+          date="Nov 2019" 
+          title="Work Attachment Program" 
+          company="ISEAS Yusof Ishak, Singapore" 
+          description="Sorted and Cleaned Artifacts"
+          skills={[]}
         />
       </div>
     </div>
