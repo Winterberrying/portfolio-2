@@ -71,7 +71,7 @@ const About = () => {
       <div className="relative my-6 w-full max-w-4xl">
         <hr className="border-t border-gray-500" />
         <div 
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 text-sm text-black"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-sm text-black text-center"
           style={{ backgroundColor: 'rgba(255, 255, 255)', borderRadius: 50 }}
         >
           Earlier Roles
