@@ -22,6 +22,7 @@ export default function Certs() {
     ],
     'Others': [
       { title: 'Aromatherapy', issuer: 'Coursera', link: 'https://coursera.org/share/5c7f9882c9b098cba77ede16308af7be'},
+      { title: 'Social Psychology', issuer: 'Coursera', link: 'https://coursera.org/share/79e3eafb6ece39c904055bd8ac38af8d'},
     ],
   };
 
