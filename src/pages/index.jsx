@@ -5,6 +5,6 @@ import Contact from "./Contact";
 import Hobbies from "./Hobbies";  
 import People from "./People";
 import Certs from "./Certs";
-import Messages from "./messages";
+import Messages from "./Messages";
 
 export { Home, About, Projects, Contact, Hobbies, People, Certs, Messages };
