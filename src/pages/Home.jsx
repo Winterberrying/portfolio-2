@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef, useEffect } from 'react';
 import Modal from '../components/Modal';
-import { About, Contact, Hobbies, People, Projects, Certs } from '.';
+import { About, Contact, Hobbies, People, Projects, Certs, Messages } from '.';
 import Loader from '../components/Loader';
 import { AiOutlineClose } from 'react-icons/ai';
 import Navbar from '../components/Navbar';
@@ -16,6 +16,7 @@ const Home = () => {
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
+  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
   const splineObject = useRef();
   const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
@@ -26,7 +27,8 @@ const Home = () => {
     setIsHobbyModalOpen(false);
     setIsPhotoModalOpen(false);
     setIsProjectModalOpen(false);
-    setIsCertModalOpen(false)
+    setIsCertModalOpen(false);
+    setIsMessageModalOpen(false)
   };
 
   const closeContactModal = () => {
@@ -65,6 +67,12 @@ const Home = () => {
     console.log('Return Home');
   };
 
+  const closeMessageModal = () => {
+    setIsMessageModalOpen(false);
+    splineObject.current.emitEvent('keyDown', 'photo-1');
+    console.log('Return Home');
+  };
+
   const openAboutModal = () => {
     closeModals();
     setIsAboutModalOpen(true);
@@ -94,6 +102,11 @@ const Home = () => {
     closeModals();
     setIsCertModalOpen(true);
   };
+
+  const openMessageModal = () => {
+    closeModals();
+    setIsMessageModalOpen(true);
+  }
 
 
   const onLoad = (spline) => {
@@ -142,6 +155,12 @@ const Home = () => {
       console.log('Plant has been clicked!');
       setTimeout(() => {
         setIsCertModalOpen(true);
+      }, 3000);
+    }
+    if (e.target.name === 'photo-1') {
+      console.log('Small photo has been clicked!');
+      setTimeout(() => {
+        setIsMessageModalOpen(true);
       }, 3000);
     }
   };
@@ -319,6 +338,12 @@ const Home = () => {
         <div className="flex flex-col md:m-4 justify-center">
 
           <Certs />
+        </div>
+      </Modal>
+      <Modal isOpen={isMessageModalOpen} onRequestClose={closeMessageModal}>
+        <div className="flex flex-col md:m-4 justify-center">
+
+          <Messages />
         </div>
       </Modal>
     </div>

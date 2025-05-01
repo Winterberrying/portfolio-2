@@ -17,6 +17,8 @@
     "@splinetool/react-spline": "^3.0.0",
     "@splinetool/runtime": "^1.4.1",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@vercel/edge-config": "^1.4.0",
+    "firebase": "^11.6.1",
     "flowise-embed": "^2.1.2",
     "flowise-embed-react": "^1.0.7",
     "framer-motion": "^12.6.3",
