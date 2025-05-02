@@ -5,9 +5,12 @@ import { database } from '../firebase'; // Make sure you have firebase configure
 export default function Messages() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState({
-    name: '',
     text: '',
   });
+
+  // Generate random names
+  const randomNames = ['Anonymous Friend', 'Secret Admirer', 'Mystery Well-wisher', 'Silent Supporter', 'Unknown Cheerleader'];
+  const getRandomName = () => randomNames[Math.floor(Math.random() * randomNames.length)];
 
   // Load messages from Firebase on component mount
   useEffect(() => {
@@ -36,16 +39,17 @@ export default function Messages() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!newMessage.name.trim() || !newMessage.text.trim()) return;
+    if (!newMessage.text.trim()) return;
 
     const messageToSend = {
-      ...newMessage,
-      date: new Date().toISOString(),
+      name: getRandomName(),
+      text: newMessage.text,
+      date: new Date().toISOString(), // Current date when submitted
     };
 
     push(ref(database, 'messages'), messageToSend)
       .then(() => {
-        setNewMessage({ name: '', text: '' });
+        setNewMessage({ text: '' });
       })
       .catch((error) => {
         console.error('Error sending message:', error);
@@ -82,21 +86,6 @@ export default function Messages() {
       <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-lg font-semibold mb-4">Leave a message</h3>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={newMessage.name}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
           <div className="mb-4">
             <label htmlFor="text" className="block text-sm font-medium text-gray-700 mb-1">
               Your Message
