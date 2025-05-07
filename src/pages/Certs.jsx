@@ -18,7 +18,7 @@ export default function Certs() {
       
     ],
     'Machine Learning': [
-
+      {title: "Machine Learning in Production", issuer: "Coursera", link:"https://coursera.org/share/a14b8dcaf45da1254fab22c2a4e82195"}
     ],
     'Others': [
       { title: 'Aromatherapy', issuer: 'Coursera', link: 'https://coursera.org/share/5c7f9882c9b098cba77ede16308af7be'},
