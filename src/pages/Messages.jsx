@@ -8,6 +8,15 @@ export default function Messages() {
     text: '',
   });
 
+  const [expandedIndexes, setExpandedIndexes] = React.useState({});
+
+  const toggleExpand = (index) => {
+    setExpandedIndexes((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   // Generate random names
   const randomNames = ['Anonymous Friend', 'Secret Admirer', 'Mystery Well-wisher', 'Silent Supporter', 'Unknown Cheerleader'];
   const getRandomName = () => randomNames[Math.floor(Math.random() * randomNames.length)];
@@ -63,15 +72,20 @@ export default function Messages() {
         <h2 className="text-gray-600">Feel free to drop me a word of encouragement!</h2>
       </div>
 
-      {/* Messages Grid - 3 per row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 gap-4 mb-8">
         {messages.length > 0 ? (
-          messages.map((message) => (
+          messages.map((message, index) => (
             <div key={message.id} className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
               <div className="font-semibold text-lg mb-2">{message.name}</div>
-              <p className="text-gray-700 mb-3">{message.text}</p>
+              {/* <p className="text-gray-700 mb-3">{message.text}</p> */}
+              <p className="text-md font-medium text-gray-700">
+                {expandedIndexes[index] ? message.text : message.text.slice(0, 120) + '...'}
+                <button onClick={() => toggleExpand(index)} className="text-blue-600 hover:underline ml-1">
+                  {expandedIndexes[index] ? 'Show less' : 'Read more'}
+                </button>
+              </p>
               <div className="text-xs text-gray-500">
-                {new Date(message.date).toLocaleString()}
+                {new Date(message.date).toLocaleString("en-GB", {year: "numeric", month: "long", day: "numeric", hour: '2-digit', minute:'2-digit', hour12: true})}
               </div>
             </div>
           ))
