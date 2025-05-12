@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillInstagram } from 'react-icons/ai';
+import { FaRunning } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -27,7 +28,13 @@ const Contact = () => {
         <div className="flex items-center space-x-4">
           <AiFillMail size={30}/>
           <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
-            <a href='mailto: chienhui.lim6@gmail.com' target="_blank">chienhui.lim6@gmail.com</a>
+            <a href='mailto: chienhui.lim6@gmail.com' target="_blank">Gmail</a>
+          </p>
+        </div>
+        <div className="flex items-center space-x-4">
+          <FaRunning size={30}/>
+          <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
+            <a href="https://www.strava.com/athletes/140498075" target="_blank">Strava</a>
           </p>
         </div>
       </div>
