@@ -25,10 +25,12 @@ const Contact = () => {
             <a href="https://www.instagram.com/ch.bytes/" target="_blank">Instagram</a>
           </p>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-wrap items-center space-x-4 max-w-full">
           <AiFillMail size={30}/>
-          <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline">
-            <a href='mailto: chienhui.lim6@gmail.com' target="_blank">Gmail</a>
+          <p className="text-2xl font-normal lg:text-2xl text-gray-800 underline break-words">
+            <a href="mailto:chienhui.lim6@gmail.com" target="_blank" className="break-all">
+              chienhui.lim6@gmail.com
+            </a>
           </p>
         </div>
         <div className="flex items-center space-x-4">
