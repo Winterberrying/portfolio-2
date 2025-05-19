@@ -39,13 +39,13 @@ const About = () => {
       </div>
       <h2 className="m-4 text-xl text-center uppercase font-extrabold tracking-tight md:text-2xl xl:text-3xl text-black">Work Experience</h2>
       <div className='space-y-4 w-full max-w-4xl'>
-        <ExperienceCard 
+        {/* <ExperienceCard 
           date="Jul 2024 — Oct 2024" 
           title="AI Engineer Intern" 
           company="Augmentus, Singapore" 
           description="Collaborated on an AI-powered defect detection system for airplane blades using computer vision and a Python-based GUI."
           skills={['Python', 'Computer Vision', 'Model Training']}
-        />
+        /> */}
         <ExperienceCard 
           date="Dec 2023 — Mar 2024" 
           title="Tech Intern" 
@@ -68,7 +68,7 @@ const About = () => {
           skills={['Documentation', 'Technical Specifications Writing', "User Acceptance Testing"]}
         />
       </div>
-      <div className="relative my-6 w-full max-w-4xl">
+      {/* <div className="relative my-6 w-full max-w-4xl">
         <hr className="border-t border-gray-500" />
         <div 
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-sm text-black text-center"
@@ -99,7 +99,7 @@ const About = () => {
           description="Sorted and Cleaned Artifacts"
           skills={[]}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
